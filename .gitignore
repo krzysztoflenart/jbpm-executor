@@ -1,0 +1,68 @@
+# project files
+log
+etc2
+scripts/karaf
+
+# common files
+*~
+*.log
+*.bak
+*.tmp
+*.swp
+*.lock
+*.tlog
+
+# JVM
+*.class
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# Maven
+target
+dependency-reduced-pom.xml
+pom.xml.versionsBackup
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+pom.properties
+release.properties
+.surefire*
+
+# Packages
+*.jar
+*.war
+*.ear
+*.zip
+
+
+# Eclipse
+.classpath
+.project
+.settings
+.metadata
+.factorypath
+
+# IDEA IntelliJ
+*.ipr
+*.iws
+*.iml
+.idea
+.idea_modules
+bin
+out
+atlassian-ide-plugin.xml
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# KDE directory preferences
+.directory
+
+# OS X
+.DS_Store
+.Trashes
+
+!src/test/resources/**/*.log
+!src/test/resources/**/*.zip

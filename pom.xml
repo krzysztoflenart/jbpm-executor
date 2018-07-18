@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.bpm</groupId>
+    <artifactId>storage.example</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <jdk.version>1.8</jdk.version>
+        <encoding>UTF-8</encoding>
+        <kie.version>7.3.0.Final</kie.version>
+        <slf4j.version>1.7.7</slf4j.version>
+        <guava.version>22.0</guava.version>
+        <lombok.version>1.16.16</lombok.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <org.drools.version>7.3.0.Final</org.drools.version>
+        <org.jbpm.version>7.3.0.Final</org.jbpm.version>
+        <logback.version>1.1.3</logback.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- Define drools BOM -->
+            <dependency>
+                <groupId>org.drools</groupId>
+                <artifactId>drools-bom</artifactId>
+                <type>pom</type>
+                <version>${org.drools.version}</version>
+                <scope>import</scope>
+            </dependency>
+            <!-- Define drools BOM -->
+            <dependency>
+                <groupId>org.jbpm</groupId>
+                <artifactId>jbpm-bom</artifactId>
+                <type>pom</type>
+                <version>${org.jbpm.version}</version>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+
+        <!-- jBPM -->
+        <dependency>
+            <groupId>org.jbpm</groupId>
+            <artifactId>jbpm-flow</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jbpm</groupId>
+            <artifactId>jbpm-flow-builder</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jbpm</groupId>
+            <artifactId>jbpm-bpmn2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jbpm</groupId>
+            <artifactId>jbpm-persistence-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jbpm</groupId>
+            <artifactId>jbpm-human-task-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jbpm</groupId>
+            <artifactId>jbpm-runtime-manager</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kie.server</groupId>
+            <artifactId>kie-server-api</artifactId>
+            <version>${kie.version}</version>
+        </dependency>
+
+        <!-- test dependencies -->
+        <dependency>
+            <groupId>org.jbpm</groupId>
+            <artifactId>jbpm-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jbpm</groupId>
+            <artifactId>jbpm-shared-services</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- KIE Module (KIE JAR) builder plugin -->
+                <plugin>
+                    <groupId>org.kie</groupId>
+                    <artifactId>kie-maven-plugin</artifactId>
+                    <version>${kie.version}</version>
+                    <extensions>true</extensions>
+                    <executions>
+                        <execution>
+                            <id>kie-module-compilation</id>
+                            <phase>generate-resources</phase>
+                            <goals>
+                                <goal>build</goal>
+                            </goals>
+                            <inherited>false</inherited>
+                            <configuration>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+
+</project>
