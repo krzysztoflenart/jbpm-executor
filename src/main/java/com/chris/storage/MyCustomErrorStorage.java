@@ -1,4 +1,4 @@
-package com.example.storage;
+package com.chris.storage;
 
 import org.kie.internal.runtime.error.ExecutionError;
 import org.kie.internal.runtime.error.ExecutionErrorStorage;

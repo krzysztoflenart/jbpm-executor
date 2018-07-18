@@ -1,8 +1,8 @@
-package com.example;
+package com.chris;
 
-import com.example.storage.MyCustomErrorStorage;
-import com.example.workitem.CorrectWorkItemHandler;
-import com.example.workitem.IncorrectWorkItemHandler;
+import com.chris.storage.MyCustomErrorStorage;
+import com.chris.workitem.CorrectWorkItemHandler;
+import com.chris.workitem.IncorrectWorkItemHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.jbpm.runtime.manager.impl.AbstractRuntimeManager;
 import org.jbpm.test.JbpmJUnitBaseTestCase;

@@ -1,4 +1,4 @@
-package com.example.workitem;
+package com.chris.workitem;
 
 import lombok.extern.slf4j.Slf4j;
 import org.kie.api.runtime.process.WorkItem;

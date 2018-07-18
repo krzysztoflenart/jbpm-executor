@@ -1,6 +1,6 @@
-package com.example.workitem;
+package com.chris.workitem;
 
-import com.example.exception.BusinessException;
+import com.chris.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.kie.api.runtime.process.WorkItem;
 import org.kie.api.runtime.process.WorkItemHandler;
